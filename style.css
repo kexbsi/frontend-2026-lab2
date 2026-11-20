@@ -1,0 +1,67 @@
+/* Завдання 2: прапор Швейцарії (варіант 2) лише засобами CSS */
+
+.flags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+}
+
+.flags figure {
+    margin: 0;
+    text-align: center;
+}
+
+.flags figcaption {
+    margin-top: 8px;
+}
+
+/* Спільне для обох прапорів: червоний квадрат 160x160.
+   Пропорції хреста як у справжнього прапора: плече 6/32, довжина 20/32 сторони. */
+.flag {
+    position: relative;          /* система відліку для білих смуг */
+    width: 160px;
+    height: 160px;
+    background-color: #cc0000;
+    border: 1px solid #999999;
+}
+
+.bar {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* ---------- 1. За допомогою position ----------
+   Кожну смугу ставимо на місце лише відступами top/left від країв квадрата:
+   горизонтальна 100x30 -> left = (160-100)/2 = 30, top = (160-30)/2 = 65;
+   вертикальна 30x100   -> left = 65, top = 30. */
+.flag-position .bar-horizontal {
+    width: 100px;
+    height: 30px;
+    top: 65px;
+    left: 30px;
+}
+
+.flag-position .bar-vertical {
+    width: 30px;
+    height: 100px;
+    top: 30px;
+    left: 65px;
+}
+
+/* ---------- 2. За допомогою transform ----------
+   Обидві смуги однакові (100x30). Ставимо лівий верхній кут у центр квадрата,
+   а потім translate(-50%, -50%) зсуває смугу на половину її власного розміру,
+   тож вона центрується незалежно від розмірів. Другу смугу додатково
+   повертаємо на 90 градусів — так з однієї горизонтальної смуги виходить хрест. */
+.flag-transform .bar {
+    width: 100px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flag-transform .bar-rotated {
+    transform: translate(-50%, -50%) rotate(90deg);
+}

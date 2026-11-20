@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML5, CSS3, таблиці, position, transform, лабораторна робота, Основи FE-технологій, ІП-44">
+    <meta name="description" content="Лабораторна робота №2 з курсу «Основи FE-технологій»: таблиця HTML5 та зображення засобами CSS3 (position і transform). Рудь Станіслав, ІП-44.">
+    <meta name="author" content="Рудь Станіслав Сергійович">
+    <title>Рудь С.С., ІП-44, ЛР №2, варіант 122</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Завдання 1: стилі таблиці (у цьому ж файлі, як вимагає умова) */
+        .lab-table {
+            border-collapse: separate;
+            border-spacing: 3px;
+            border: 2px solid #555555;
+            width: 100%;
+            max-width: 720px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+        }
+
+        .lab-table td {
+            border: 2px solid #777777;
+            height: 36px;
+            padding: 4px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* 1-й рядок: #nn8f8f, nn = 02 (варіант 2) */
+        .lab-table tr.row-1 td {
+            background-color: #028f8f;
+            color: #000000;
+        }
+
+        /* 2-й рядок: #f5f5nn, nn = 02 */
+        .lab-table tr.row-2 td {
+            background-color: #f5f502;
+            color: #02028f;
+        }
+
+        /* При наведенні кольори фону й тексту міняються місцями */
+        .lab-table tr.row-1:hover td {
+            background-color: #000000;
+            color: #028f8f;
+        }
+
+        .lab-table tr.row-2:hover td {
+            background-color: #02028f;
+            color: #f5f502;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Лабораторна робота №2 — «Таблиці в HTML-5. Створення зображень засобами трансформацій в CSS-3»</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Завдання 1. Таблиця (варіант 2)</h2>
+            <table class="lab-table">
+                <tr class="row-1">
+                    <td rowspan="3">Рудь</td>
+                    <td>Станіслав</td>
+                    <td rowspan="3">Сергійович</td>
+                    <td></td>
+                </tr>
+                <tr class="row-2">
+                    <td>ІП-44</td>
+                    <td>ЛР-2, варіант 2</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Завдання 2. Прапор Швейцарії (варіант 2)</h2>
+            <div class="flags">
+                <figure>
+                    <div class="flag flag-position" role="img" aria-label="Прапор Швейцарії, зроблений за допомогою position">
+                        <div class="bar bar-horizontal"></div>
+                        <div class="bar bar-vertical"></div>
+                    </div>
+                    <figcaption>1 — за допомогою position</figcaption>
+                </figure>
+
+                <figure>
+                    <div class="flag flag-transform" role="img" aria-label="Прапор Швейцарії, зроблений за допомогою transform">
+                        <div class="bar"></div>
+                        <div class="bar bar-rotated"></div>
+                    </div>
+                    <figcaption>2 — за допомогою transform</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Рудь Станіслав, ІП-44. Курс «Основи FE-технологій», КПІ ім. Ігоря Сікорського.</p>
+    </footer>
+</body>
+</html>
